@@ -28,7 +28,7 @@ namespace MongoDbCache
 
             services.AddOptions();
             services.Configure(setupAction);
-            services.Add(ServiceDescriptor.Singleton<IDistributedCache, MongoDbCache>());
+            services.AddSingleton<IDistributedCache, MongoDbCache>();
 
             return services;
         }
